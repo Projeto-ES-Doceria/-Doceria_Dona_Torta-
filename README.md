@@ -2,7 +2,7 @@
 
 ## Desenvolvido por
 
-[![Edvaldo H. L.](https://avatars0.githubusercontent.com/u/30741312?s=64&v=4)](https://github.com/EdvaldoHLeite) |  [![Hermyson C. M. O.](https://avatars1.githubusercontent.com/u/44072239?s=64&v=4)](https://github.com/Hermyson) |  [![Laisy C. F. S.](https://avatars1.githubusercontent.com/u/44072239?s=64&v=4)](https://github.com/laisy)
+[![Edvaldo H. L.](https://avatars.githubusercontent.com/u/49196243?s=400&u=4bb79821392921c3b07daa29e97bd63b442e7173&v=4)](https://github.com/EdvaldoHLeite) |  [![Hermyson C. M. O.](https://avatars1.githubusercontent.com/u/44072239?s=64&v=4)](https://avatars.githubusercontent.com/u/34428873?s=400&v=4) |  [![Laisy C. F. S.](https://avatars1.githubusercontent.com/u/44072239?s=64&v=4)](https://github.com/laisy)
 |-------------------|-------------------
 | **Edvaldo H. L.** | Hermyson C. M. O. | **Laisy C. F. S.** | 
 ---
