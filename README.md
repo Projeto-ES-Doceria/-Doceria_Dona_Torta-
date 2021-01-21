@@ -2,10 +2,7 @@
 
 ## Desenvolvido por
 
-[![Edvaldo H. L.](https://github.com/EdvaldoHLeite) |  [![Hermyson C. M. O.]] |  [![Laisy C. F. S.]](https://github.com/laisy)
-|-------------------|-------------------
-| **Edvaldo H. L.** | Hermyson C. M. O. | **Laisy C. F. S.** | 
----
+![Edvaldo H. L.](https://github.com/EdvaldoHLeite) |  ![Hermyson C. M. O.](https://github.com/Hermyson) |  ![Laisy C. F. S.](https://github.com/laisy)
 
 ## Projeto de Engenharia de Software - 2020.4
 
