@@ -45,6 +45,8 @@ GEM
     activerecord (6.0.3.4)
       activemodel (= 6.0.3.4)
       activesupport (= 6.0.3.4)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activestorage (6.0.3.4)
       actionpack (= 6.0.3.4)
       activejob (= 6.0.3.4)
@@ -74,13 +76,15 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    database_cleaner (1.8.5)
+    diff-lcs (1.4.4)
     erubi (1.10.0)
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.7)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.10.1)
+    jbuilder (2.11.1)
       activesupport (>= 5.0.0)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -102,6 +106,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (4.3.7)
       nio4r (~> 2.0)
@@ -142,6 +147,19 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.8.2)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.1)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.1)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -200,13 +218,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  database_cleaner
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
+  rspec
   sass-rails (>= 6)
   selenium-webdriver
   spring
@@ -219,7 +241,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.6.6
 
 BUNDLED WITH
    2.1.4
