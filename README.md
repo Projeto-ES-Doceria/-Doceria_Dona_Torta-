@@ -20,3 +20,5 @@ Implementação de um software para a disciplina de Engenharia de Software, no c
 - Controle de vendas
 - Relatório de faturamento por data
 
+## URL heroku
+https://doceria-dona-torta.herokuapp.com/
