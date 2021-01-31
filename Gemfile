@@ -52,6 +52,13 @@ group :test do
   gem 'webdrivers'
   gem 'rspec'
   gem 'database_cleaner'
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+  gem 'cucumber', '3.1.2'
+  gem 'cucumber-rails', '2.0.0' , require: false
+  gem 'rspec'
+  gem 'database_cleaner'
 end
 
 group :production do
