@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "/signup", to: "usuarios#new"
   get "/login", to: "sessions#new"
-  get "/sessions", to: "sessions#create"
+  post "/sessions", to: "sessions#create"
   delete "/sessions", to: "sessions#destroy"
 
   resources :agendas
