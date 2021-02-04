@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_015955) do
+ActiveRecord::Schema.define(version: 2021_02_02_034947) do
 
   create_table "agendas", force: :cascade do |t|
     t.text "mensagem"
