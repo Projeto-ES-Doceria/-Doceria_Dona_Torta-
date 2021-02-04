@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clientes
+  resources :enderecos
   resources :usuarios
 
   get "/signup", to: "usuarios#new"
