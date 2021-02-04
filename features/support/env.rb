@@ -13,7 +13,6 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Before do
 DatabaseCleaner.clean
 end
-
 # frozen_string_literal: true
 
 # Capybara defaults to CSS3 selectors rather than XPath.

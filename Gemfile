@@ -56,8 +56,8 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'cucumber', '3.1.2'
-  gem 'cucumber-rails', '2.0.0' , require: false
+  gem 'cucumber', '3.0.2'
+  gem 'cucumber-rails', require: false
   gem 'rspec'
   gem 'database_cleaner'
 end
@@ -65,8 +65,6 @@ end
 group :production do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
-  gem 'wdm', '>= 0.1.0'
-  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 end
 
