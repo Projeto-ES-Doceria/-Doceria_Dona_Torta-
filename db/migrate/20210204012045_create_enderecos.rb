@@ -1,6 +1,6 @@
 class CreateEnderecos < ActiveRecord::Migration[6.0]
   def change
-    create_table :enderecos do |t|
+    create_table :enderecos, if_not_exists: true do |t|
       t.string :rua
       t.string :numero
       t.string :bairro
