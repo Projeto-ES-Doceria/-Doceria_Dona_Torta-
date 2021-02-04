@@ -1,5 +1,6 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
+  before_action :authorized, only: [:index, :show, :new, :create, :edit, :update]
 
 
 

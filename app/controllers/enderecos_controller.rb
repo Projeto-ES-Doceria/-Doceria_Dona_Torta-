@@ -1,5 +1,6 @@
 class EnderecosController < ApplicationController
   before_action :set_endereco, only: %i[ show edit update destroy ]
+  before_action :authorized, only: [:index, :show, :new, :create, :edit, :update]
 
   # GET /enderecos or /enderecos.json
   def index
