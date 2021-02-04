@@ -1,6 +1,8 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
 
+
+
   # GET /clientes or /clientes.json
   def index
     @clientes = Cliente.all
