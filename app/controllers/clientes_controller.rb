@@ -1,6 +1,6 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
-  before_action :authorized, only: [:index, :show, :new, :create, :edit, :update]
+  #before_action :authorized, only: [:index, :show, :new, :create, :edit, :update]
 
 
 
@@ -69,7 +69,7 @@ class ClientesController < ApplicationController
     def cliente_params
       params.require(:cliente).permit(:nome, :telefone, :celular, :email, :endereco_id)
     end
-    def endereco_params
-      params.require(:cliente).permit(:rua, :numero, :bairro, :cidade, :cep, :estado, :complemento)
-    end
+    #def endereco_params
+    # params.require(:cliente).permit(:rua, :numero, :bairro, :cidade, :cep, :estado, :complemento)
+    #end
 end
