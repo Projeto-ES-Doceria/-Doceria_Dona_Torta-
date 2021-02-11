@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: %i[ show edit update destroy ]
-  before_action :authorized, only: [:show, :edit, :new]
+  before_action :authorized, only: [:show, :edit, :new, :destroy]
 
   # GET /usuarios or /usuarios.json
   def index
@@ -23,9 +23,9 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
-    if !logged_in? or current_user.adm == false
+    if current_user.id != set_usuario.id
       respond_to do |format|
-        format.html { redirect_to '/usuarios', notice: "Deve-se estar logado como administrador." }
+        format.html { redirect_to '/usuarios', notice: "Somente o proprietário da conta pode fazer alterações." }
       end
     end
   end

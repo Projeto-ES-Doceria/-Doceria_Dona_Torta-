@@ -21,8 +21,8 @@
           <td> Não </td>
         <% end %>
         <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Edit-#{usuario.email}", edit_usuario_path(usuario) %></td>
+        <td><%= link_to "Destroy-#{usuario.email}", usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
