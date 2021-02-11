@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:usuario_id]
-      @usuario = Usuario.find(session[:usuario_id])
+      @usuario_logado = Usuario.find(session[:usuario_id])
     end
   end
 

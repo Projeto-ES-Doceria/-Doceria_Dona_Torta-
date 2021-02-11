@@ -6,8 +6,12 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @usuario.password_digest %>
+  <strong> Administrador?: </strong>
+  <% if @usuario.adm == true %>
+    Sim
+  <% else %>
+    Não
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_usuario_path(@usuario) %> |

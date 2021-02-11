@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: %i[ show edit update destroy ]
-  before_action :authorized, only: [:show]
+  before_action :authorized, only: [:show, :edit, :new, :destroy]
 
   # GET /usuarios or /usuarios.json
   def index
@@ -13,16 +13,27 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/new
   def new
+    if !logged_in? or current_user.adm == false
+      respond_to do |format|
+        format.html { redirect_to '/usuarios', notice: "Deve-se estar logado como administrador." }
+      end
+    end
     @usuario = Usuario.new
   end
 
   # GET /usuarios/1/edit
   def edit
+    if current_user.id != set_usuario.id
+      respond_to do |format|
+        format.html { redirect_to '/usuarios', notice: "Somente o proprietário da conta pode fazer alterações." }
+      end
+    end
   end
 
   # POST /usuarios or /usuarios.json
   def create
-    @usuario = Usuario.new(usuario_params)
+    parametros = usuario_params.merge({:adm => false})
+    @usuario = Usuario.new(parametros)
 
     respond_to do |format|
       if @usuario.save
@@ -50,6 +61,11 @@ class UsuariosController < ApplicationController
 
   # DELETE /usuarios/1 or /usuarios/1.json
   def destroy
+    if !logged_in? or current_user.adm == false
+      respond_to do |format|
+        format.html { redirect_to '/usuarios', notice: "Deve-se estar logado como administrador." }
+      end
+    end
     @usuario.destroy
     respond_to do |format|
       format.html { redirect_to usuarios_url, notice: "Usuario was successfully destroyed." }
@@ -65,6 +81,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:email, :password, :password_confirmation)
+      params.require(:usuario).permit(:email, :password, :password_confirmation, :adm)
     end
 end
