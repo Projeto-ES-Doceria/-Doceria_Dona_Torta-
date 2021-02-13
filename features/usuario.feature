@@ -1,5 +1,7 @@
 Feature: Usuario
-  As an usuario do sistema eu desejo ter acesso a logins e cadastros do sistema
+  As an administrador da Doceria_Dona_Torta
+  I want to ter acesso a logins e cadastros do sistema
+  so that controlar o acesso ao sistema
 
     Background:
       Given Estou logado como administrador com email "adm@email.com" e senha "123456"
