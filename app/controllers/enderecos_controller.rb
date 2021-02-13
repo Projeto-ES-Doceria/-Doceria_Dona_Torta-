@@ -23,19 +23,16 @@ class EnderecosController < ApplicationController
   # POST /enderecos or /enderecos.json
   def create
     @endereco = Endereco.new(endereco_params)
-    if @endereco.save
 
+    respond_to do |format|
+    if @endereco.save
+        format.html { redirect_to @endereco, notice: "Endereco was successfully created." }
+        format.json { render :show, status: :created, location: @endereco }
+    else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @endereco.errors, status: :unprocessable_entity }
     end
-    #puts @endereco
-    #respond_to do |format|
-    #if @endereco.save
-        #format.html { redirect_to @endereco, notice: "Endereco was successfully created." }
-        #format.json { render :show, status: :created, location: @endereco }
-    #else
-        #format.html { render :new, status: :unprocessable_entity }
-        #format.json { render json: @endereco.errors, status: :unprocessable_entity }
-    #end
-    #end*/
+    end
   end
 
   # PATCH/PUT /enderecos/1 or /enderecos/1.json

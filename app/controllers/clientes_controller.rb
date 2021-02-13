@@ -15,13 +15,6 @@ class ClientesController < ApplicationController
   # GET /clientes/new
   def new
     @cliente = Cliente.new
-    #@endereco = Endereco.new
-    #@enderecos = Endereco.all
-    #@enderecos = []
-    #@enderecos = Endereco.all.map{ |c| [c.rua, c.id]}
-    #Endereco.all.each do |endereco|
-      #@enderecos.push([endereco.rua, endereco.id])
-    #end
   end
 
   # GET /clientes/1/edit
@@ -72,7 +65,6 @@ class ClientesController < ApplicationController
     end
 
     def set_enderecos
-      @endereco = Endereco.new
       @enderecos = Endereco.all.map{ |c| [c.rua, c.id]}
     end
 

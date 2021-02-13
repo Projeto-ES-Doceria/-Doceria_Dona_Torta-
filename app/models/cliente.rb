@@ -1,6 +1,5 @@
 class Cliente < ApplicationRecord
   belongs_to :endereco
-
   accepts_nested_attributes_for :endereco, reject_if: :all_blank,allow_destroy: true
 
   validates_uniqueness_of :email
