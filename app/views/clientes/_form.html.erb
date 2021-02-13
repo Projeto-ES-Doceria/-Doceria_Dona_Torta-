@@ -31,12 +31,18 @@
     <%= form.text_field :email %>
   </div>
 
-  <div class="field">
-    <%= form.label :endereco_id %>
-    <%= form.text_field :endereco_id %>
-  </div>
+  Endereço:
+  <!--%= collection_select(:cliente, :endereco_id, @enderecos, :id, :rua) %-->
+  <%= form.select(:endereco_id, options_for_select(@enderecos)) %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<br> <br>
+<div class="form">
+  Novo Endereço:
+  <%= render 'enderecos/form', endereco: @endereco %>
+</div>
+<br> <br>

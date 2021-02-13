@@ -1,8 +1,7 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
+  before_action :set_enderecos, only: [:new, :create, :edit]
   #before_action :authorized, only: [:index, :show, :new, :create, :edit, :update]
-
-
 
   # GET /clientes or /clientes.json
   def index
@@ -16,6 +15,13 @@ class ClientesController < ApplicationController
   # GET /clientes/new
   def new
     @cliente = Cliente.new
+    #@endereco = Endereco.new
+    #@enderecos = Endereco.all
+    #@enderecos = []
+    #@enderecos = Endereco.all.map{ |c| [c.rua, c.id]}
+    #Endereco.all.each do |endereco|
+      #@enderecos.push([endereco.rua, endereco.id])
+    #end
   end
 
   # GET /clientes/1/edit
@@ -25,7 +31,7 @@ class ClientesController < ApplicationController
   # POST /clientes or /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
-
+    puts cliente_params
     respond_to do |format|
       if @cliente.save
         format.html { redirect_to @cliente, notice: "Cliente was successfully created." }
@@ -62,14 +68,16 @@ class ClientesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
-      @cliente = Cliente.where("id = ?", params[:id])
+      @cliente = Cliente.find(params[:id])
+    end
+
+    def set_enderecos
+      @endereco = Endereco.new
+      @enderecos = Endereco.all.map{ |c| [c.rua, c.id]}
     end
 
     # Only allow a list of trusted parameters through.
     def cliente_params
       params.require(:cliente).permit(:nome, :telefone, :celular, :email, :endereco_id)
     end
-    #def endereco_params
-    # params.require(:cliente).permit(:rua, :numero, :bairro, :cidade, :cep, :estado, :complemento)
-    #end
 end
