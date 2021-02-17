@@ -1,5 +1,6 @@
 class IngredientesController < ApplicationController
   before_action :set_ingrediente, only: %i[ show edit update destroy ]
+  before_action :set_produtos, only: %i[ new ]
 
   # GET /ingredientes or /ingredientes.json
   def index
@@ -60,6 +61,10 @@ class IngredientesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ingrediente
       @ingrediente = Ingrediente.find(params[:id])
+    end
+
+    def set_produtos
+      @produtos = Produto.all.map{ |c| [c.nome, c.id]}
     end
 
     # Only allow a list of trusted parameters through.

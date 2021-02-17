@@ -36,10 +36,8 @@
     <%= form.date_select :vencimento %>
   </div>
 
-  <div class="field">
-    <%= form.label :produto_id %>
-    <%= form.text_field :produto_id %>
-  </div>
+  Produto:
+  <%= form.select(:produto_id, options_for_select(@produtos)) %>
 
   <div class="actions">
     <%= form.submit %>

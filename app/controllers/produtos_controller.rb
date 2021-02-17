@@ -25,8 +25,9 @@ class ProdutosController < ApplicationController
 
     respond_to do |format|
       if @produto.save
-        format.html { redirect_to @produto, notice: "Produto was successfully created." }
-        format.json { render :show, status: :created, location: @produto }
+        #format.html { redirect_to @produto, notice: "Produto was successfully created." }
+        #format.json { render :show, status: :created, location: @produto }
+        format.html { redirect_to "/ingredientes/new", notice: "Produto was successfully created."}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @produto.errors, status: :unprocessable_entity }
