@@ -1,4 +1,5 @@
 class Produto < ApplicationRecord
+  has_many :ingredientes
   validates :nome, presence: true, uniqueness: true, length: {min: 4, max: 20}
   validates :descricao, presence: true
   validates :fabricacao, presence: true

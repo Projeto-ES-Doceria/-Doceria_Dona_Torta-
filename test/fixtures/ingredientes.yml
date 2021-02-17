@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  preco: 9.99
+  quantidade: 1
+  vencimento: 2021-02-17
+  produto: one
+
+two:
+  nome: MyString
+  descricao: MyText
+  preco: 9.99
+  quantidade: 1
+  vencimento: 2021-02-17
+  produto: two
