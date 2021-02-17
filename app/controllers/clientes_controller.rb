@@ -61,7 +61,7 @@ class ClientesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
-      @cliente = Cliente.find(params[:id])
+      @cliente = Cliente.where("id = ?", params[:id])
     end
 
     def set_enderecos

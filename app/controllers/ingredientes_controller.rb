@@ -60,7 +60,7 @@ class IngredientesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ingrediente
-      @ingrediente = Ingrediente.find(params[:id])
+      @ingrediente = Ingrediente.where("id = ?", params[:id])
     end
 
     def set_produtos
