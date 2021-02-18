@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ingredientes
+  resources :produtos
   resources :clientes
   resources :enderecos
   resources :usuarios

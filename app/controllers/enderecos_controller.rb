@@ -25,13 +25,13 @@ class EnderecosController < ApplicationController
     @endereco = Endereco.new(endereco_params)
 
     respond_to do |format|
-      if @endereco.save
+    if @endereco.save
         format.html { redirect_to @endereco, notice: "Endereco was successfully created." }
         format.json { render :show, status: :created, location: @endereco }
-      else
+    else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @endereco.errors, status: :unprocessable_entity }
-      end
+    end
     end
   end
 

@@ -1,8 +1,7 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
+  before_action :set_enderecos, only: [:new, :create, :edit]
   #before_action :authorized, only: [:index, :show, :new, :create, :edit, :update]
-
-
 
   # GET /clientes or /clientes.json
   def index
@@ -25,7 +24,7 @@ class ClientesController < ApplicationController
   # POST /clientes or /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
-
+    puts cliente_params
     respond_to do |format|
       if @cliente.save
         format.html { redirect_to @cliente, notice: "Cliente was successfully created." }
@@ -65,11 +64,12 @@ class ClientesController < ApplicationController
       @cliente = Cliente.where("id = ?", params[:id])
     end
 
+    def set_enderecos
+      @enderecos = Endereco.all.map{ |c| [c.rua, c.id]}
+    end
+
     # Only allow a list of trusted parameters through.
     def cliente_params
       params.require(:cliente).permit(:nome, :telefone, :celular, :email, :endereco_id)
     end
-    #def endereco_params
-    # params.require(:cliente).permit(:rua, :numero, :bairro, :cidade, :cep, :estado, :complemento)
-    #end
 end
